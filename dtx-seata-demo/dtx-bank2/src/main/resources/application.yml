@@ -1,0 +1,21 @@
+server:
+  port: 848
+
+spring:
+  application:
+    name: dtx-bank2
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bank2?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=UTC
+    username: root
+    password: 1234
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

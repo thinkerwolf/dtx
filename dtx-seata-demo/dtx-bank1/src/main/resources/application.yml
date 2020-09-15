@@ -1,0 +1,23 @@
+server:
+  port: 847
+
+spring:
+  application:
+    name: dtx-bank1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bank1?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: 1234
+    hikari:
+      maximum-pool-size: 10
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
