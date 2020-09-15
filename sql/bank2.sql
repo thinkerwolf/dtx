@@ -5,16 +5,16 @@
  Source Server Type    : MySQL
  Source Server Version : 50729
  Source Host           : localhost:3306
- Source Schema         : bank1
+ Source Schema         : bank2
 
  Target Server Type    : MySQL
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 15/09/2020 20:17:42
+ Date: 15/09/2020 20:17:48
 */
 
-CREATE DATABASE IF NOT EXISTS `bank1` CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
+CREATE DATABASE IF NOT EXISTS `bank2` CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
@@ -31,12 +31,12 @@ CREATE TABLE `account_info`  (
   `account_balance` double NULL DEFAULT NULL COMMENT '帐户余额',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `account_no`(`account_no`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of account_info
 -- ----------------------------
-INSERT INTO `account_info` VALUES (2, '张三的账户', '1', '', 9996);
+INSERT INTO `account_info` VALUES (3, '李四的账户', '2', NULL, 4);
 
 -- ----------------------------
 -- Table structure for undo_log
