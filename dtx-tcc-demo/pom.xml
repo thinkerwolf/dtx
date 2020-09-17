@@ -9,14 +9,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dtx-seata-demo</artifactId>
+    <artifactId>dtx-tcc-demo</artifactId>
     <packaging>pom</packaging>
+    <description>TCC分布式事务Demo</description>
+
     <modules>
-        <module>dtx-bank1</module>
-        <module>dtx-bank2</module>
+        <module>dtx-tcc-bank1</module>
+        <module>dtx-tcc-bank2</module>
     </modules>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.dromara</groupId>
+            <artifactId>hmily-spring-boot-starter-springcloud</artifactId>
+        </dependency>
     </dependencies>
+
 </project>
