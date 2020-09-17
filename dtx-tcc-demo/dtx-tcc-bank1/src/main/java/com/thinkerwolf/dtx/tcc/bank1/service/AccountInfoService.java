@@ -28,14 +28,14 @@ public class AccountInfoService implements IAccountInfoService {
      * Try 幂等校验
      * Try 悬挂处理
      *
-     * @param fromAccountNo
-     * @param toAccountNo
-     * @param amount
-     * @return
+     * @param fromAccountNo 发起转账账号
+     * @param toAccountNo   接受转账账号
+     * @param amount        转账钱数
+     * @return 操作结果
      */
     @Override
-    // 被@Hmily注解的方法就是Try方法
     @Transactional
+    // 被@Hmily注解的方法就是Try方法
     @Hmily(confirmMethod = "confirm_updateAccountBalance", cancelMethod = "cancel_updateAccountBalance")
     public OpResult updateAccountBalance(String fromAccountNo, String toAccountNo, Double amount) {
         String txNo = HmilyTransactionContextLocal.getInstance().get().getTransId();
@@ -65,12 +65,12 @@ public class AccountInfoService implements IAccountInfoService {
      * Confirm方法
      */
     public OpResult confirm_updateAccountBalance(String fromAccountNo, String toAccountNo, Double amount) {
-        String txNo = HmilyTransactionContextLocal.getInstance().get().getTransId();
-        // Confirm 幂等校验
-        if (tccLogMapper.isConfirmExists(txNo) > 0) {
-            return OpResult.fail("Confirm已经执行过了,txNo:" + txNo);
-        }
-        tccLogMapper.addConfirm(txNo);
+//        String txNo = HmilyTransactionContextLocal.getInstance().get().getTransId();
+//        // Confirm 幂等校验
+//        if (tccLogMapper.isConfirmExists(txNo) > 0) {
+//            return OpResult.fail("Confirm已经执行过了,txNo:" + txNo);
+//        }
+//        tccLogMapper.addConfirm(txNo);
         return OpResult.ok();
     }
 

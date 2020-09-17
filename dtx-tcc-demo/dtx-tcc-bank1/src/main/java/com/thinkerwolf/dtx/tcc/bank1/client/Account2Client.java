@@ -1,5 +1,7 @@
 package com.thinkerwolf.dtx.tcc.bank1.client;
 
+import com.thinkerwolf.dtx.common.OpResult;
+import org.dromara.hmily.annotation.Hmily;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +17,7 @@ public interface Account2Client {
      * @return
      */
     @RequestMapping("/bank2/transfer")
-    boolean transfer(@RequestParam("accountNo") String accountNo, @RequestParam("amount") Double amount);
+    @Hmily
+    OpResult transfer(@RequestParam("accountNo") String accountNo, @RequestParam("amount") Double amount);
 
 }

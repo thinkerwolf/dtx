@@ -1,6 +1,8 @@
 package com.thinkerwolf.dtx.common;
 
-public class OpResult {
+import java.io.Serializable;
+
+public class OpResult implements Serializable {
 
     private int state;
 
@@ -30,6 +32,15 @@ public class OpResult {
 
     public void setData(Object data) {
         this.data = data;
+    }
+
+    /**
+     * 操作是否成功
+     *
+     * @return true or false
+     */
+    public boolean suc() {
+        return this.state == 1;
     }
 
     public static OpResult ok() {
