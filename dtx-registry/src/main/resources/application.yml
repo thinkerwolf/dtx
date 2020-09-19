@@ -1,6 +1,9 @@
 spring:
   application:
     name: dtx-reg
+  cloud:
+    discovery:
+      enabled: true
 
 server:
   port: 837

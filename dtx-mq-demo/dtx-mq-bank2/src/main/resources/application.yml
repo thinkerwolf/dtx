@@ -1,0 +1,24 @@
+server:
+  port: 858
+
+spring:
+  application:
+    name: mq-bank2
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/bank2?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: 1234
+    hikari:
+      maximum-pool-size: 10
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: bank-group
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

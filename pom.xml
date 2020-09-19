@@ -12,6 +12,7 @@
         <module>dtx-seata-demo</module>
         <module>dtx-tcc-demo</module>
         <module>dtx-common</module>
+        <module>dtx-mq-demo</module>
     </modules>
     <packaging>pom</packaging>
     <description>Seata事务银行转账Demo</description>
@@ -38,6 +39,7 @@
         <mysql.version>5.1.34</mysql.version>
         <seata.version>1.3.0</seata.version>
         <hmily.version>2.0.6-RELEASE</hmily.version>
+        <rocketmq-boot.version>2.0.3</rocketmq-boot.version>
     </properties>
 
     <dependencies>
@@ -54,11 +56,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
-        </dependency>
-        <dependency>
-            <groupId>com.thinkerwolf</groupId>
-            <artifactId>dtx-common</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -118,6 +115,11 @@
                 <groupId>org.dromara</groupId>
                 <artifactId>hmily-spring-boot-starter-springcloud</artifactId>
                 <version>${hmily.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq-boot.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

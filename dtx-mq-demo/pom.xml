@@ -9,15 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dtx-tcc-demo</artifactId>
+    <artifactId>dtx-mq-demo</artifactId>
     <packaging>pom</packaging>
-    <description>TCC分布式事务Demo</description>
-
+    <description>MQ分布式事务Demo</description>
     <modules>
-        <module>dtx-tcc-bank1</module>
-        <module>dtx-tcc-bank2</module>
+        <module>dtx-mq-bank1</module>
+        <module>dtx-mq-bank2</module>
     </modules>
-
     <dependencies>
         <dependency>
             <groupId>com.thinkerwolf</groupId>
@@ -25,9 +23,8 @@
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.dromara</groupId>
-            <artifactId>hmily-spring-boot-starter-springcloud</artifactId>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
-
 </project>
